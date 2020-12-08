@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <div class="p-4 m-4">
+        <form action="" class="border p-4 rounded">
+            <h3 class="alert alert-light border rounded text-center">Create An Account</h3>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">First name</label>
+                <input type="text" name="first_name" class="form-control form-control-sm" id="exampleInputEmail1"
+                       placeholder="First name" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail11" class="form-label">Last name</label>
+                <input type="text" name="last_name" class="form-control form-control-sm" id="exampleInputEmail11"
+                       placeholder="Last name" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1111" class="form-label">Phone</label>
+                <input type="text" name="phone" class="form-control form-control-sm" id="exampleInputEmail1111"
+                       placeholder="01*********" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail111" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control form-control-sm" id="exampleInputEmail111"
+                       placeholder="example@example.com" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control form-control-sm" id="exampleInputPassword1" placeholder="**********">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input form-control-sm" id="exampleCheck1">
+                <label class="form-check-label mt-2" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-info btn-sm">Create An Account</button>
+        </form>
+    </div>
+</div>
+{%endblock%}
