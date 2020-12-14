@@ -12,55 +12,63 @@
     <title>Eshop</title>
 </head>
 <body>
-    <!------nav------>
-     <nav class="one-edge-shadow
+<!------nav------>
+<nav class="one-edge-shadow
       sticky-top navbar
       navbar-expand-lg
        navbar-light bg-white">
-        <a class="navbar-brand" href="/">E-Shop</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <a class="navbar-brand" href="/">E-Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/store">Store <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/store">Store <span class="sr-only">(current)</span></a>
             </li>
 
-          </ul>
+        </ul>
 
 
-          <ul class=" navbar-nav my-2 my-lg-0">
+        <ul class=" navbar-nav my-2 my-lg-0">
+            
+
+            {%if request.session.customer %}
             <li class="nav-item ">
-              <a class="nav-link" href="/cart">Cart
-                <span class="badge badge-info"></span>
-                <span class="sr-only">(current)</span></a>
-            </li>
-
-
-            <li class="nav-item ">
-              <a class="nav-link" href="{%url 'singup'%}">Signup<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Cart<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="{% url 'login' %}">Login<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Orders<span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#">Logout<span class="sr-only">(current)</span></a>
+            </li>
+            {%else%}
+            <li class="nav-item ">
+                <a class="nav-link" href="{%url 'singup'%}">Signup<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{% url 'login' %}">Login<span class="sr-only">(current)</span></a>
+            </li>
+            {%endif%}
 
 
 
 
-          </ul>
+
+        </ul>
 
 
-        </div>
-      </nav>
+    </div>
+</nav>
 
-    <!------navX------>
+<!------navX------>
 
-    {% block content %}
+{% block content %}
 
-    {% endblock %}
+{% endblock %}
 
 
 
