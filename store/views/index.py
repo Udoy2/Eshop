@@ -8,6 +8,8 @@ from django.views import View
 # Create your views here.
 class Index(View):
     def get(self, request):
+        if not request.session.get('cart'):
+            request.session['cart'] = {}
         products = None
         categorys = Category.get_all_category()
         categoryID = request.GET.get('category')

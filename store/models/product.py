@@ -9,7 +9,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.first_name
-
+    @staticmethod
+    def get_all_products_by_its_id(ids):
+        return Product.objects.filter(pk__in = ids)
     @staticmethod
     def get_all_products():
         return Product.objects.all()
